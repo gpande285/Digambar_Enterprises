@@ -1,0 +1,732 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Digamber Enterprises - Security & Housekeeping Services | Pune</title>
+    <!-- Favicon -->
+    <link rel="icon" type="image/jpeg" sizes="32x32" href="images/logo.jpg">
+    <link rel="icon" type="image/jpeg" sizes="16x16" href="images/logo.jpg">
+    <link rel="shortcut icon" type="image/jpeg" href="images/logo.jpg">
+    <link rel="apple-touch-icon" sizes="180x180" href="images/logo.jpg">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body {
+            box-sizing: border-box;
+        }
+        .hero-gradient {
+            background: linear-gradient(135deg, #1e40af 0%, #3b82f6 50%, #60a5fa 100%);
+        }
+        .service-card {
+            transition: all 0.3s ease;
+        }
+        .service-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+        }
+        .floating-animation {
+            animation: float 6s ease-in-out infinite;
+        }
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+        }
+        .fade-in {
+            animation: fadeIn 1s ease-in;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .logo-background-breathing {
+            opacity: 0.5;
+        }
+        .breathing-logo {
+            width: 400px;
+            height: 400px;
+            object-fit: contain;
+            animation: breathing 4s ease-in-out infinite;
+        }
+        @keyframes breathing {
+            0%, 100% {
+                transform: scale(1);
+                filter: blur(0px);
+                opacity: 0.2;
+            }
+            50% {
+                transform: scale(1.15);
+                filter: blur(3px);
+                opacity: 0.1;
+            }
+        }
+        .infinite-scroll-container {
+            width: 100%;
+            height: 100%;
+        }
+        .infinite-scroll-track {
+            display: flex;
+            width: fit-content;
+            height: 100%;
+            animation: scroll-horizontal 60s linear infinite;
+        }
+        .scroll-image-wrapper {
+            display: flex;
+            gap: 0;
+            height: 100%;
+        }
+        .scroll-image {
+            width: 100vw;
+            height: 100%;
+            object-fit: cover;
+            filter: blur(0px);
+            opacity: 1;
+            flex-shrink: 0;
+        }
+        @keyframes scroll-horizontal {
+            0% {
+                transform: translateX(0);
+            }
+            100% {
+                transform: translateX(-50%);
+            }
+        }
+        .hero-gradient {
+            position: relative;
+        }
+    </style>
+</head>
+<body class="font-sans">
+    <!-- Header -->
+    <header class="bg-white shadow-lg sticky top-0 z-50">
+        <nav class="container mx-auto px-6 py-4">
+            <div class="flex items-center justify-between">
+                <div class="flex items-center space-x-3">
+                    <img src="images/logo.jpg" alt="Digamber Enterprises" class="w-12 h-12">
+                    <div>
+                        <h1 class="text-2xl font-bold text-gray-800">Digamber Enterprises</h1>
+                        <p class="text-sm text-gray-600">Government Authorized Services</p>
+                    </div>
+                </div>
+                <div class="hidden md:flex space-x-6">
+                    <a href="#services" class="text-gray-700 hover:text-blue-600 transition-colors">Services</a>
+                    <a href="#about" class="text-gray-700 hover:text-blue-600 transition-colors">About</a>
+                    <a href="#contact" class="text-gray-700 hover:text-blue-600 transition-colors">Contact</a>
+                </div>
+                <button id="mobileMenuBtn" class="md:hidden text-gray-700">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                    </svg>
+                </button>
+            </div>
+            <div id="mobileMenu" class="hidden md:hidden mt-4 pb-4">
+                <a href="#services" class="block py-2 text-gray-700 hover:text-blue-600">Services</a>
+                <a href="#about" class="block py-2 text-gray-700 hover:text-blue-600">About</a>
+                <a href="#contact" class="block py-2 text-gray-700 hover:text-blue-600">Contact</a>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero-gradient text-white py-20 relative overflow-hidden min-h-[600px]">
+        <!-- Logo Background with Breathing Animation -->
+        <div class="logo-background-breathing absolute inset-0 flex items-center justify-center z-0">
+            <img src="images/logo.jpg" alt="Digamber Enterprises Logo" class="breathing-logo">
+        </div>
+        <!-- Content -->
+        <div class="container mx-auto px-6 text-center relative z-10">
+            <div class="fade-in">
+                <h2 class="text-5xl md:text-6xl font-bold mb-6">Professional Services</h2>
+                <p class="text-xl md:text-2xl mb-8 opacity-90">Security • Housekeeping • Society Management • Water Solutions</p>
+                <div class="bg-white/20 backdrop-blur-sm rounded-lg p-6 mb-8 inline-block">
+                    <p class="text-lg font-semibold">🏆 Government Authorized under PASARA Act</p>
+                    <p class="text-sm opacity-90">License No: PSA/S/L/1/MH/2025/FEB/2/4856</p>
+                </div>
+                <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                    <a href="#services" class="bg-white text-blue-600 px-8 py-4 rounded-full font-semibold hover:bg-gray-100 transition-colors">
+                        Explore Services
+                    </a>
+                    <a href="#contact" class="border-2 border-white text-white px-8 py-4 rounded-full font-semibold hover:bg-white hover:text-blue-600 transition-colors">
+                        Get Quote
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="py-20 bg-gray-50">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h3 class="text-4xl font-bold text-gray-800 mb-4">Our Services</h3>
+                <p class="text-xl text-gray-600">Comprehensive solutions for all your property management needs</p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Security Services -->
+                <div class="service-card bg-white rounded-xl p-8 shadow-lg">
+                    <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mb-6">
+                        <span class="text-3xl">🔒</span>
+                    </div>
+                    <h4 class="text-2xl font-bold text-gray-800 mb-4">Private Security</h4>
+                    <ul class="text-gray-600 space-y-2 mb-6">
+                        <li>✓ Licensed under PASARA Act</li>
+                        <li>✓ 24/7 surveillance & monitoring</li>
+                        <li>✓ Trained & uniformed guards</li>
+                        <li>✓ Event security & crowd management</li>
+                        <li>✓ Emergency response ready</li>
+                    </ul>
+                    <button class="w-full bg-blue-600 text-white py-3 rounded-lg hover:bg-blue-700 transition-colors" onclick="openServiceModal('security')">
+                        Learn More
+                    </button>
+                </div>
+
+                <!-- Housekeeping Services -->
+                <div class="service-card bg-white rounded-xl p-8 shadow-lg">
+                    <div class="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mb-6">
+                        <span class="text-3xl">🧹</span>
+                    </div>
+                    <h4 class="text-2xl font-bold text-gray-800 mb-4">Housekeeping</h4>
+                    <ul class="text-gray-600 space-y-2 mb-6">
+                        <li>✓ Daily & deep cleaning solutions</li>
+                        <li>✓ Office & residential cleaning</li>
+                        <li>✓ Eco-friendly materials</li>
+                        <li>✓ Trained professional staff</li>
+                        <li>✓ Quality-controlled services</li>
+                    </ul>
+                    <button class="w-full bg-green-600 text-white py-3 rounded-lg hover:bg-green-700 transition-colors" onclick="openServiceModal('housekeeping')">
+                        Learn More
+                    </button>
+                </div>
+
+                <!-- Society Management -->
+                <div class="service-card bg-white rounded-xl p-8 shadow-lg">
+                    <div class="w-16 h-16 bg-purple-100 rounded-full flex items-center justify-center mb-6">
+                        <span class="text-3xl">🏘️</span>
+                    </div>
+                    <h4 class="text-2xl font-bold text-gray-800 mb-4">Society Management</h4>
+                    <ul class="text-gray-600 space-y-2 mb-6">
+                        <li>✓ End-to-end administration</li>
+                        <li>✓ Financial management</li>
+                        <li>✓ Maintenance tracking</li>
+                        <li>✓ Compliance handling</li>
+                        <li>✓ Community engagement</li>
+                    </ul>
+                    <button class="w-full bg-purple-600 text-white py-3 rounded-lg hover:bg-purple-700 transition-colors" onclick="openServiceModal('society')">
+                        Learn More
+                    </button>
+                </div>
+
+                <!-- Water Tank Cleaning -->
+                <div class="service-card bg-white rounded-xl p-8 shadow-lg">
+                    <div class="w-16 h-16 bg-cyan-100 rounded-full flex items-center justify-center mb-6">
+                        <span class="text-3xl">💧</span>
+                    </div>
+                    <h4 class="text-2xl font-bold text-gray-800 mb-4">Water Tank Cleaning</h4>
+                    <ul class="text-gray-600 space-y-2 mb-6">
+                        <li>✓ Imported jet pressure machines</li>
+                        <li>✓ Chemical disinfection</li>
+                        <li>✓ UV rays treatment</li>
+                        <li>✓ Safe & hygienic water</li>
+                        <li>✓ Industrial & residential</li>
+                    </ul>
+                    <button class="w-full bg-cyan-600 text-white py-3 rounded-lg hover:bg-cyan-700 transition-colors" onclick="openServiceModal('water')">
+                        Learn More
+                    </button>
+                </div>
+
+                <!-- Pumping System -->
+                <div class="service-card bg-white rounded-xl p-8 shadow-lg">
+                    <div class="w-16 h-16 bg-orange-100 rounded-full flex items-center justify-center mb-6">
+                        <span class="text-3xl">⚙️</span>
+                    </div>
+                    <h4 class="text-2xl font-bold text-gray-800 mb-4">Pumping Automation</h4>
+                    <ul class="text-gray-600 space-y-2 mb-6">
+                        <li>✓ Modern automated systems</li>
+                        <li>✓ Reduced manual intervention</li>
+                        <li>✓ Energy efficiency optimization</li>
+                        <li>✓ Uninterrupted water flow</li>
+                        <li>✓ Easy maintenance</li>
+                    </ul>
+                    <button class="w-full bg-orange-600 text-white py-3 rounded-lg hover:bg-orange-700 transition-colors" onclick="openServiceModal('pumping')">
+                        Learn More
+                    </button>
+                </div>
+
+                <!-- Why Choose Us -->
+                <div class="service-card bg-gradient-to-br from-blue-600 to-purple-600 text-white rounded-xl p-8 shadow-lg">
+                    <div class="w-16 h-16 bg-white/20 rounded-full flex items-center justify-center mb-6">
+                        <span class="text-3xl">🏆</span>
+                    </div>
+                    <h4 class="text-2xl font-bold mb-4">Why Choose Us?</h4>
+                    <ul class="space-y-2 mb-6">
+                        <li>✓ 10+ years experience</li>
+                        <li>✓ Government authorized</li>
+                        <li>✓ State-of-the-art equipment</li>
+                        <li>✓ Competitive pricing</li>
+                        <li>✓ Reliable & punctual</li>
+                    </ul>
+                    <button class="w-full bg-white text-blue-600 py-3 rounded-lg hover:bg-gray-100 transition-colors" onclick="scrollToContact()">
+                        Contact Us
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Image Gallery Scroll Section -->
+    <h3 class="text-center text-2xl font-bold text-gray-800 mb-4">Our Team Is Always Ready to Serve You</h3>
+    <section class="image-gallery-scroll relative overflow-hidden h-[500px]">
+        <div class="infinite-scroll-container absolute inset-0 z-0">
+            <div class="infinite-scroll-track">
+                <div class="scroll-image-wrapper">
+                    <img src="images/IMG-20251114-WA0002.jpg" alt="Service" class="scroll-image">
+                    <img src="images/IMG-20251114-WA0003.jpg" alt="Service" class="scroll-image">
+                    <img src="images/IMG-20251114-WA0004.jpg" alt="Service" class="scroll-image">
+                    <img src="images/IMG-20251114-WA0005.jpg" alt="Service" class="scroll-image">
+                    <img src="images/IMG-20251114-WA0006.jpg" alt="Service" class="scroll-image">
+                </div>
+                <div class="scroll-image-wrapper">
+                    <img src="images/IMG-20251114-WA0007.jpg" alt="Service" class="scroll-image">
+                    <img src="images/IMG-20251114-WA0008.jpg" alt="Service" class="scroll-image">
+                    <img src="images/IMG-20251114-WA0009.jpg" alt="Service" class="scroll-image">
+                    <img src="images/IMG-20251114-WA0010.jpg" alt="Service" class="scroll-image">
+                    <img src="images/IMG-20251114-WA0011.jpg" alt="Service" class="scroll-image">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 bg-white">
+        <div class="container mx-auto px-6">
+            <div class="grid lg:grid-cols-2 gap-12 items-center">
+                <div>
+                    <h3 class="text-4xl font-bold text-gray-800 mb-6">About Digamber Enterprises</h3>
+                    <p class="text-lg text-gray-600 mb-6">
+                        With over 10 years of excellence in service delivery, Digamber Enterprises has established itself as Pune's most trusted provider of security, housekeeping, and property management solutions.
+                    </p>
+                    <p class="text-lg text-gray-600 mb-8">
+                        Our government authorization under the PASARA Act ensures that every service we provide meets the highest standards of professionalism, legal compliance, and client satisfaction.
+                    </p>
+                    <div class="grid sm:grid-cols-2 gap-6">
+                        <div class="text-center p-4 bg-blue-50 rounded-lg">
+                            <div class="text-3xl font-bold text-blue-600">10+</div>
+                            <div class="text-gray-600">Years Experience</div>
+                        </div>
+                        <div class="text-center p-4 bg-green-50 rounded-lg">
+                            <div class="text-3xl font-bold text-green-600">500+</div>
+                            <div class="text-gray-600">Happy Clients</div>
+                        </div>
+                        <div class="text-center p-4 bg-purple-50 rounded-lg">
+                            <div class="text-3xl font-bold text-purple-600">24/7</div>
+                            <div class="text-gray-600">Service Support</div>
+                        </div>
+                        <div class="text-center p-4 bg-orange-50 rounded-lg">
+                            <div class="text-3xl font-bold text-orange-600">100%</div>
+                            <div class="text-gray-600">Satisfaction</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="floating-animation">
+                    <div class="bg-gradient-to-br from-blue-100 to-purple-100 rounded-2xl p-8">
+                        <div class="text-center">
+                            <div class="w-24 h-24 bg-blue-600 rounded-full flex items-center justify-center mx-auto mb-6">
+                                <span class="text-white font-bold text-3xl">DE</span>
+                            </div>
+                            <h4 class="text-2xl font-bold text-gray-800 mb-4">Government Authorized</h4>
+                            <div class="bg-white rounded-lg p-4 shadow-md">
+                                <p class="font-semibold text-gray-800">PASARA Act License</p>
+                                <p class="text-sm text-gray-600">PSA/S/L/1/MH/2025/FEB/2/4856</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 bg-gray-900 text-white">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h3 class="text-4xl font-bold mb-4">Get In Touch</h3>
+                <p class="text-xl text-gray-300">Ready to experience professional service? Contact us today!</p>
+            </div>
+            
+            <div class="grid lg:grid-cols-2 gap-12">
+                <div>
+                    <h4 class="text-2xl font-bold mb-6">Contact Information</h4>
+                    <div class="space-y-6">
+                        <div class="flex items-start space-x-4">
+                            <div class="w-12 h-12 bg-blue-600 rounded-full flex items-center justify-center flex-shrink-0">
+                                <span class="text-xl">📍</span>
+                            </div>
+                            <div>
+                                <h5 class="font-semibold mb-1">Address</h5>
+                                <p class="text-gray-300">Sr. No. 53, Kalepadal, Hadapsar<br>Pune - 411028, Maharashtra</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start space-x-4">
+                            <div class="w-12 h-12 bg-green-600 rounded-full flex items-center justify-center flex-shrink-0">
+                                <span class="text-xl">📞</span>
+                            </div>
+                            <div>
+                                <h5 class="font-semibold mb-1">Phone Numbers</h5>
+                                <p class="text-gray-300">
+                                    <a href="tel:+918862017889" class="hover:text-green-400">+91 8862017889</a><br>
+                                    <a href="tel:+918999823281" class="hover:text-green-400">+91 8999823281</a><br>
+                                    <a href="tel:+919763393382" class="hover:text-green-400">+91 9763393382</a>
+                                </p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start space-x-4">
+                            <div class="w-12 h-12 bg-purple-600 rounded-full flex items-center justify-center flex-shrink-0">
+                                <span class="text-xl">📧</span>
+                            </div>
+                            <div>
+                                <h5 class="font-semibold mb-1">Email</h5>
+                                <p class="text-gray-300">
+                                    <a href="mailto:digamberenterprises88@gmail.com" class="hover:text-purple-400">digamberenterprises88@gmail.com</a><br>
+                                    <a href="mailto:tankcleen@gmail.com" class="hover:text-purple-400">tankcleen@gmail.com</a>
+                                </p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start space-x-4">
+                            <div class="w-12 h-12 bg-orange-600 rounded-full flex items-center justify-center flex-shrink-0">
+                                <span class="text-xl">👥</span>
+                            </div>
+                            <div>
+                                <h5 class="font-semibold mb-1">Leadership</h5>
+                                <p class="text-gray-300">
+                                    <strong>Proprietor:</strong> Gorakh Mohite<br>
+                                    <strong>Service Partner:</strong> Shriram Kaluke
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div>
+                    <h4 class="text-2xl font-bold mb-6">Send Us a Message</h4>
+                    <form id="contactForm" class="space-y-6">
+                        <div>
+                            <label for="name" class="block text-sm font-medium mb-2">Full Name</label>
+                            <input type="text" id="name" name="name" required class="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent text-white">
+                        </div>
+                        <div>
+                            <label for="email" class="block text-sm font-medium mb-2">Email Address</label>
+                            <input type="email" id="email" name="email" required class="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent text-white">
+                        </div>
+                        <div>
+                            <label for="phone" class="block text-sm font-medium mb-2">Phone Number</label>
+                            <input type="tel" id="phone" name="phone" class="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent text-white">
+                        </div>
+                        <div>
+                            <label for="service" class="block text-sm font-medium mb-2">Service Interested In</label>
+                            <select id="service" name="service" class="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent text-white">
+                                <option value="">Select a service</option>
+                                <option value="security">Private Security</option>
+                                <option value="housekeeping">Housekeeping</option>
+                                <option value="society">Society Management</option>
+                                <option value="water">Water Tank Cleaning</option>
+                                <option value="pumping">Pumping System Automation</option>
+                                <option value="multiple">Multiple Services</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label for="message" class="block text-sm font-medium mb-2">Message</label>
+                            <textarea id="message" name="message" rows="4" class="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent text-white" placeholder="Tell us about your requirements..."></textarea>
+                        </div>
+                        <button type="submit" class="w-full bg-blue-600 text-white py-3 px-6 rounded-lg hover:bg-blue-700 transition-colors font-semibold">
+                            Send Message
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-black text-white py-8">
+        <div class="container mx-auto px-6 text-center">
+            <div class="flex items-center justify-center space-x-3 mb-4">
+                <img src="logo.jpg" alt="Digamber Enterprises Logo" class="w-10 h-10 rounded-full">
+                <span class="text-xl font-bold">Digamber Enterprises</span>
+            </div>
+            <p class="text-gray-400 mb-4">Professional Security, Housekeeping & Property Management Services</p>
+            <p class="text-sm text-gray-500">© 2024 Digamber Enterprises. All rights reserved. | Government Authorized under PASARA Act</p>
+        </div>
+    </footer>
+
+    <!-- Service Modal -->
+    <div id="serviceModal" class="fixed inset-0 bg-black bg-opacity-50 hidden z-50 flex items-center justify-center p-4">
+        <div class="bg-white rounded-xl max-w-2xl w-full max-h-[90vh] overflow-y-auto">
+            <div class="p-6">
+                <div class="flex justify-between items-center mb-6">
+                    <h3 id="modalTitle" class="text-2xl font-bold text-gray-800"></h3>
+                    <button onclick="closeServiceModal()" class="text-gray-500 hover:text-gray-700">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                        </svg>
+                    </button>
+                </div>
+                <div id="modalContent" class="text-gray-600"></div>
+                <div class="mt-6 flex gap-4">
+                    <button onclick="scrollToContact(); closeServiceModal();" class="bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition-colors">
+                        Get Quote
+                    </button>
+                    <button onclick="closeServiceModal()" class="border border-gray-300 text-gray-700 px-6 py-3 rounded-lg hover:bg-gray-50 transition-colors">
+                        Close
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Mobile menu toggle
+        document.getElementById('mobileMenuBtn').addEventListener('click', function() {
+            const mobileMenu = document.getElementById('mobileMenu');
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                    // Close mobile menu if open
+                    document.getElementById('mobileMenu').classList.add('hidden');
+                }
+            });
+        });
+
+        // Contact form submission
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Show success message
+            const formData = new FormData(this);
+            const name = formData.get('name');
+            
+            // Create success message
+            const successDiv = document.createElement('div');
+            successDiv.className = 'bg-green-600 text-white p-4 rounded-lg mb-6';
+            successDiv.innerHTML = `
+                <div class="flex items-center space-x-2">
+                    <span class="text-xl">✅</span>
+                    <div>
+                        <p class="font-semibold">Thank you, ${name}!</p>
+                        <p class="text-sm">Your message has been received. We'll contact you within 24 hours.</p>
+                    </div>
+                </div>
+            `;
+            
+            // Insert success message before the form
+            this.parentNode.insertBefore(successDiv, this);
+            
+            // Reset form
+            this.reset();
+            
+            // Remove success message after 5 seconds
+            setTimeout(() => {
+                successDiv.remove();
+            }, 5000);
+        });
+
+        // Service modal functions
+        const serviceDetails = {
+            security: {
+                title: "Private Security Services",
+                content: `
+                    <div class="space-y-4">
+                        <p class="text-lg">Our licensed security services provide comprehensive protection for your property and peace of mind for you and your family.</p>
+                        
+                        <h4 class="text-xl font-semibold text-gray-800">Key Features:</h4>
+                        <ul class="space-y-2">
+                            <li>• <strong>PASARA Act Licensed:</strong> Fully authorized by Maharashtra Government</li>
+                            <li>• <strong>24/7 Surveillance:</strong> Round-the-clock monitoring and protection</li>
+                            <li>• <strong>Trained Personnel:</strong> Professional, uniformed guards with proper training</li>
+                            <li>• <strong>Event Security:</strong> Crowd management for events and gatherings</li>
+                            <li>• <strong>Emergency Response:</strong> Quick response to security threats</li>
+                            <li>• <strong>Asset Protection:</strong> Safeguarding valuable property and equipment</li>
+                        </ul>
+                        
+                        <h4 class="text-xl font-semibold text-gray-800">Ideal For:</h4>
+                        <ul class="space-y-2">
+                            <li>• Residential societies and apartments</li>
+                            <li>• Commercial establishments and offices</li>
+                            <li>• Industrial facilities and warehouses</li>
+                            <li>• Events and special occasions</li>
+                        </ul>
+                    </div>
+                `
+            },
+            housekeeping: {
+                title: "Professional Housekeeping Services",
+                content: `
+                    <div class="space-y-4">
+                        <p class="text-lg">Our comprehensive housekeeping services ensure clean, hygienic, and pleasant environments for your home or business.</p>
+                        
+                        <h4 class="text-xl font-semibold text-gray-800">Service Features:</h4>
+                        <ul class="space-y-2">
+                            <li>• <strong>Daily Cleaning:</strong> Regular maintenance and upkeep</li>
+                            <li>• <strong>Deep Cleaning:</strong> Thorough cleaning for special occasions</li>
+                            <li>• <strong>Eco-Friendly Materials:</strong> Safe, non-toxic cleaning products</li>
+                            <li>• <strong>Trained Staff:</strong> Professional, reliable, and punctual team</li>
+                            <li>• <strong>Quality Control:</strong> Regular inspections and feedback</li>
+                            <li>• <strong>Flexible Scheduling:</strong> Services tailored to your needs</li>
+                        </ul>
+                        
+                        <h4 class="text-xl font-semibold text-gray-800">Areas We Serve:</h4>
+                        <ul class="space-y-2">
+                            <li>• Office buildings and corporate spaces</li>
+                            <li>• Housing societies and residential complexes</li>
+                            <li>• Commercial establishments and retail spaces</li>
+                            <li>• Hospitality and healthcare facilities</li>
+                        </ul>
+                    </div>
+                `
+            },
+            society: {
+                title: "Society Management Services",
+                content: `
+                    <div class="space-y-4">
+                        <p class="text-lg">Complete housing society administration services to enhance community living and resident satisfaction.</p>
+                        
+                        <h4 class="text-xl font-semibold text-gray-800">Management Services:</h4>
+                        <ul class="space-y-2">
+                            <li>• <strong>Administrative Support:</strong> End-to-end society administration</li>
+                            <li>• <strong>Financial Management:</strong> Budget planning and expense tracking</li>
+                            <li>• <strong>Maintenance Coordination:</strong> Scheduling and overseeing repairs</li>
+                            <li>• <strong>Compliance Management:</strong> Legal and regulatory compliance</li>
+                            <li>• <strong>Community Engagement:</strong> Organizing events and meetings</li>
+                            <li>• <strong>Performance Audits:</strong> Regular quality assessments</li>
+                        </ul>
+                        
+                        <h4 class="text-xl font-semibold text-gray-800">Benefits:</h4>
+                        <ul class="space-y-2">
+                            <li>• Seamless living experience for residents</li>
+                            <li>• Professional handling of society affairs</li>
+                            <li>• Transparent financial management</li>
+                            <li>• Enhanced property values</li>
+                            <li>• Reduced conflicts and disputes</li>
+                        </ul>
+                    </div>
+                `
+            },
+            water: {
+                title: "Water Tank Cleaning Services",
+                content: `
+                    <div class="space-y-4">
+                        <p class="text-lg">Advanced water tank cleaning services using imported equipment and UV treatment for safe, pure water storage.</p>
+                        
+                        <h4 class="text-xl font-semibold text-gray-800">Cleaning Process:</h4>
+                        <ul class="space-y-2">
+                            <li>• <strong>Jet Pressure Cleaning:</strong> Imported high-pressure machines</li>
+                            <li>• <strong>Chemical Disinfection:</strong> Removal of harmful bacteria and algae</li>
+                            <li>• <strong>UV Treatment:</strong> Ultraviolet rays for water purification</li>
+                            <li>• <strong>Quality Testing:</strong> Water quality verification post-cleaning</li>
+                            <li>• <strong>Safety Protocols:</strong> Complete safety measures during cleaning</li>
+                            <li>• <strong>Documentation:</strong> Cleaning certificates and reports</li>
+                        </ul>
+                        
+                        <h4 class="text-xl font-semibold text-gray-800">Tank Types:</h4>
+                        <ul class="space-y-2">
+                            <li>• Residential building water tanks</li>
+                            <li>• Industrial facility storage tanks</li>
+                            <li>• Institutional and commercial tanks</li>
+                            <li>• Underground and overhead tanks</li>
+                        </ul>
+                        
+                        <p class="text-sm text-gray-600 bg-blue-50 p-3 rounded">
+                            <strong>Health Benefit:</strong> Regular tank cleaning prevents waterborne diseases and ensures safe drinking water for your family or employees.
+                        </p>
+                    </div>
+                `
+            },
+            pumping: {
+                title: "Pumping System Automation",
+                content: `
+                    <div class="space-y-4">
+                        <p class="text-lg">Modern automated water supply systems that reduce manual intervention and ensure reliable water distribution.</p>
+                        
+                        <h4 class="text-xl font-semibold text-gray-800">Automation Features:</h4>
+                        <ul class="space-y-2">
+                            <li>• <strong>Smart Controls:</strong> Automated start/stop based on water levels</li>
+                            <li>• <strong>Energy Efficiency:</strong> Optimized power consumption</li>
+                            <li>• <strong>Remote Monitoring:</strong> System status monitoring capabilities</li>
+                            <li>• <strong>Pressure Management:</strong> Consistent water pressure maintenance</li>
+                            <li>• <strong>Fault Detection:</strong> Automatic error detection and alerts</li>
+                            <li>• <strong>Easy Maintenance:</strong> Simplified servicing and repairs</li>
+                        </ul>
+                        
+                        <h4 class="text-xl font-semibold text-gray-800">System Benefits:</h4>
+                        <ul class="space-y-2">
+                            <li>• Uninterrupted water supply</li>
+                            <li>• Reduced electricity costs</li>
+                            <li>• Extended equipment lifespan</li>
+                            <li>• Minimal manual intervention required</li>
+                            <li>• Improved system reliability</li>
+                        </ul>
+                        
+                        <p class="text-sm text-gray-600 bg-green-50 p-3 rounded">
+                            <strong>Cost Savings:</strong> Automated systems can reduce energy consumption by up to 30% compared to manual operations.
+                        </p>
+                    </div>
+                `
+            }
+        };
+
+        function openServiceModal(serviceType) {
+            const modal = document.getElementById('serviceModal');
+            const title = document.getElementById('modalTitle');
+            const content = document.getElementById('modalContent');
+            
+            const service = serviceDetails[serviceType];
+            if (service) {
+                title.textContent = service.title;
+                content.innerHTML = service.content;
+                modal.classList.remove('hidden');
+                document.body.style.overflow = 'hidden';
+            }
+        }
+
+        function closeServiceModal() {
+            const modal = document.getElementById('serviceModal');
+            modal.classList.add('hidden');
+            document.body.style.overflow = 'auto';
+        }
+
+        function scrollToContact() {
+            document.getElementById('contact').scrollIntoView({
+                behavior: 'smooth',
+                block: 'start'
+            });
+        }
+
+        // Close modal when clicking outside
+        document.getElementById('serviceModal').addEventListener('click', function(e) {
+            if (e.target === this) {
+                closeServiceModal();
+            }
+        });
+
+        // Close modal with Escape key
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') {
+                closeServiceModal();
+            }
+        });
+    </script>
+<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9948f86dc49329f5',t:'MTc2MTQ3MTM5OC4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+</html>
